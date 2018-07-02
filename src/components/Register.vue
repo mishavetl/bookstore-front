@@ -1,6 +1,6 @@
 <template>
-  <div id="login-page">
-    <h1>{{ $t('login') }}</h1>
+  <div id="register-page">
+    <h1>{{ $t('registration') }}</h1>
     <b-form @submit="onSubmit">
       <b-form-group id="usernameFormGroup"
                     :label="$t('username label')"
@@ -10,6 +10,16 @@
                       v-model="form.username"
                       required
                       :placeholder="$t('enter username')">
+        </b-form-input>
+      </b-form-group>
+      <b-form-group id="emailFormGroup"
+                    :label="$t('email label')"
+                    label-for="emailInput">
+        <b-form-input id="emailInput"
+                      type="text"
+                      v-model="form.email"
+                      required
+                      :placeholder="$t('enter email')">
         </b-form-input>
       </b-form-group>
       <b-form-group id="passwordFormGroup"
@@ -22,26 +32,22 @@
                       :placeholder="$t('enter password')">
         </b-form-input>
       </b-form-group>
-      <b-form-group id="rememberGroup">
-        <b-form-checkbox id="rememberCheck" v-model="form.remember">{{ $t('rememberMe')}} </b-form-checkbox>
-      </b-form-group>
       <div class="text-center">
-        <b-button type="submit" variant="primary">{{ $t('login') }}</b-button>
+        <b-button type="submit" variant="primary">{{ $t('register') }}</b-button>
       </div>
     </b-form>
   </div>
 </template>
 
 <script>
-// import axios from 'axios'
 export default {
-  name: 'Login',
+  name: 'Register',
   data () {
     return {
       form: {
         username: '',
-        password: '',
-        remember: false
+        email: '',
+        password: ''
       }
     }
   },

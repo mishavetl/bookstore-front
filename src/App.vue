@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Alerts/>
     <div id="navbar-container">
       <Navbar />
     </div>
@@ -12,11 +13,13 @@
 
 <script>
 import Navbar from './Navbar'
+import Alerts from './Alerts'
 
 export default {
   name: 'App',
   components: {
-    Navbar
+    Navbar,
+    Alerts
   }
 }
 </script>
