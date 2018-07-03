@@ -11,8 +11,13 @@ export default {
   'rememberMe': 'Запомнить меня',
   'enter username': 'Введите имя пользователя',
   'enter email': 'Введите email',
-  'enter password': 'Enter password',
+  'enter password': 'Введите пароль',
+  'enter password confirmation': 'Подтвердите пароль',
   'username label': 'Имя пользователя: ',
   'email label': 'Email: ',
-  'password label': 'Пароль: '
+  'password label': 'Пароль: ',
+  'password confirmation label': 'Подтверждение пароля: ',
+  'email is required and must be valid': 'Это обязательное поле, которое должно быть правильным email адресом',
+  'field is required and must be 6 characters': 'Это обязательное поле, которое должно быть не менее шести символов длинной',
+  'an error occurred': 'Возникла ошибка'
 }

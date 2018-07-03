@@ -10,12 +10,17 @@ import router from './router'
 import Vuex from 'vuex'
 import vuexI18n from 'vuex-i18n'
 import BootstrapVue from 'bootstrap-vue'
+import Vuelidate from 'vuelidate'
 import storeOptions from './store'
 import enLocale from './locales/en'
 import ruLocale from './locales/ru'
+import axios from 'axios'
+
+axios.defaults.headers.common['Accept'] = 'application/json'
 
 Vue.use(Vuex)
 Vue.use(BootstrapVue)
+Vue.use(Vuelidate)
 
 const store = new Vuex.Store(storeOptions)
 

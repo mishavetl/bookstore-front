@@ -12,7 +12,12 @@ export default {
   'enter username': 'Enter username',
   'enter email': 'Enter email',
   'enter password': 'Enter password',
+  'enter password confirmation': 'Confirm the password',
   'username label': 'Username: ',
   'email label': 'Email: ',
-  'password label': 'Password: '
+  'password label': 'Password: ',
+  'password confirmation label': 'Password confirmation: ',
+  'email is required and must be valid': 'This is a required field and must be a valid email address',
+  'field is required and must be 6 characters': 'This is a required field and must be at least 6 characters',
+  'an error occurred': 'An error occurred'
 }

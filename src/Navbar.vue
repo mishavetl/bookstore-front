@@ -35,11 +35,11 @@
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-    <b-modal hide-footer id="loginModal">
-      <Login/>
+    <b-modal hide-footer id="loginModal" ref="loginModal">
+      <Login @exit="hideLoginModal"/>
     </b-modal>
-    <b-modal hide-footer id="registerModal">
-      <Register/>
+    <b-modal hide-footer id="registerModal" ref="registerModal">
+      <Register @exit="hideRegisterModal"/>
     </b-modal>
   </div>
 </template>
@@ -62,7 +62,13 @@ export default {
       Object.keys(state.i18n.translations)
   }),
   methods: {
-    translate: function (language) {
+    hideLoginModal () {
+      this.$refs.loginModal.hide()
+    },
+    hideRegisterModal () {
+      this.$refs.registerModal.hide()
+    },
+    translate (language) {
       this.$i18n.set(language)
     }
   }
