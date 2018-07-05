@@ -1,7 +1,7 @@
 export default {
   'navbar search': 'Search books, authors',
   'en': 'EN',
-  'ru': 'RU',
+  'ru': 'РУС',
   'profile': 'Profile',
   'signout': 'Sign out',
   'login': 'Login',
@@ -19,5 +19,6 @@ export default {
   'password confirmation label': 'Password confirmation: ',
   'email is required and must be valid': 'This is a required field and must be a valid email address',
   'field is required and must be 6 characters': 'This is a required field and must be at least 6 characters',
-  'an error occurred': 'An error occurred'
+  'an error occurred': 'An error occurred',
+  'field must be identical to the one above': 'The field must be identical to the one above'
 }

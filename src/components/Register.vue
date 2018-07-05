@@ -67,7 +67,7 @@
                       :placeholder="$t('enter password confirmation')">
         </b-form-input>
         <b-form-invalid-feedback id="registerPasswordConfirmLiveFeedback">
-          The field must be identical to the one above
+          {{ $t('field must be identical to the one above') }}
         </b-form-invalid-feedback>
       </b-form-group>
       <div class="text-center">
