@@ -4,16 +4,6 @@
       <h1>{{ $t('registration') }}</h1>
     </div>
     <b-form @submit.prevent="onSubmit">
-      <!--<b-form-group id="usernameFormGroup"-->
-                    <!--:label="$t('username label')"-->
-                    <!--label-for="usernameInput">-->
-        <!--<b-form-input id="usernameInput"-->
-                      <!--type="text"-->
-                      <!--v-model="form.username"-->
-                      <!--required-->
-                      <!--:placeholder="$t('enter username')">-->
-        <!--</b-form-input>-->
-      <!--</b-form-group>-->
       <b-alert variant="danger"
                dismissible
                :show="errors.serverError !== undefined"
@@ -21,7 +11,7 @@
       <b-alert variant="danger"
                dismissible
                :show="errors.email !== undefined"
-               @dismissed="errors.email=undefined">Email {{ errors.email }}</b-alert>
+               @dismissed="errors.email=undefined">{{ errors.email }}</b-alert>
       <b-form-group id="registerEmailFormGroup"
                     :label="$t('email label')"
                     label-for="registerEmailInput">
@@ -80,7 +70,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import AuthService from '@/services/AuthService'
 import { validationMixin } from 'vuelidate'
 import { required, email, minLength, sameAs } from 'vuelidate/lib/validators'
 export default {
@@ -89,7 +79,6 @@ export default {
   data () {
     return {
       form: {
-        // username: '',
         email: '',
         password: '',
         passwordConfirmation: ''
@@ -115,21 +104,18 @@ export default {
   },
   methods: {
     parseErrors: function (errors) {
-      if (errors.email) errors.email = errors.email[0]
+      if (errors.email) errors.email = errors.full_messages[0]
       return errors
     },
     onSubmit: function () {
       this.errors = {}
-      let url = this.$store.state.API_URL + '/users?locale=' + this.$i18n.locale()
-      axios.post(url, {
-        user: {
-          email: this.form.email,
-          password: this.form.password
-        }
+      AuthService.register(this.$store, this.$i18n, {
+        email: this.form.email,
+        password: this.form.password
       })
         .then(response => {
+          console.log(response)
           this.$emit('exit', true)
-          // console.log(response)
         })
         .catch(error => {
           if (error.response.status === 422) {

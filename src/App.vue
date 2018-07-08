@@ -6,7 +6,9 @@
     </div>
     <!--<img src="./assets/logo.png">-->
     <div id="page" class="container">
-      <router-view/>
+      <!--<transition name="slide">-->
+        <router-view/>
+      <!--</transition>-->
     </div>
   </div>
 </template>

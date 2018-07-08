@@ -8,15 +8,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vuex from 'vuex'
-import vuexI18n from 'vuex-i18n'
 import BootstrapVue from 'bootstrap-vue'
+import vuexI18n from 'vuex-i18n'
 import Vuelidate from 'vuelidate'
 import storeOptions from './store'
 import enLocale from './locales/en'
 import ruLocale from './locales/ru'
-import axios from 'axios'
-
-axios.defaults.headers.common['Accept'] = 'application/json'
+import RouteManager from './plugins/RouteManager'
 
 Vue.use(Vuex)
 Vue.use(BootstrapVue)
@@ -29,6 +27,8 @@ Vue.use(vuexI18n.plugin, store)
 Vue.i18n.add('en', enLocale)
 Vue.i18n.add('ru', ruLocale)
 Vue.i18n.set('en')
+
+Vue.use(RouteManager, router)
 
 Vue.config.productionTip = false
 
