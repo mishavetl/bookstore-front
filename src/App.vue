@@ -16,6 +16,9 @@
 <script>
 import Navbar from './Navbar'
 import Alerts from './Alerts'
+// import 'bootstrap'
+import './assets/styles/style.scss'
+// import './assets/logo.png'
 
 export default {
   name: 'App',

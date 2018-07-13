@@ -1,9 +1,9 @@
 <template>
   <div>
-    <b-navbar toggleable="md" type="light" variant="default">
+    <b-navbar toggleable="md" type="default">
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-      <b-navbar-brand :to="route({name: 'Index'})">Bookstore</b-navbar-brand>
+      <b-navbar-brand>Bookstore</b-navbar-brand>
 
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
