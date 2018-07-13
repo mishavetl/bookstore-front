@@ -1,6 +1,9 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {faBars, faShoppingBag} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'bootstrap/scss/bootstrap.scss';
@@ -17,6 +20,11 @@ import ruLocale from './locales/ru';
 import RouteManager from './plugins/RouteManager';
 import router from './router';
 import storeOptions from './store';
+
+library.add(faShoppingBag);
+library.add(faBars);
+
+Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.use(Vuex);
 Vue.use(BootstrapVue);

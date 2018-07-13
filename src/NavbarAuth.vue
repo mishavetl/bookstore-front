@@ -11,23 +11,25 @@
     </b-nav-item-dropdown>
     <b-nav-item
       v-b-modal.loginModal
-      v-show="!signedIn">{{ $t('login') }}
+      v-show="!signedIn"
+      @click.stop>{{ $t('login') }}
     </b-nav-item>
     <b-nav-item
       v-b-modal.registerModal
-      v-show="!signedIn">{{ $t('registration') }}
+      v-show="!signedIn"
+      @click.stop>{{ $t('registration') }}
     </b-nav-item>
     <b-modal
       id="loginModal"
       ref="loginModal"
       hide-footer>
-      <Login @exit="hideLoginModal"/>
+      <login @exit="hideLoginModal"/>
     </b-modal>
     <b-modal
       id="registerModal"
       ref="registerModal"
       hide-footer>
-      <Register @exit="hideRegisterModal"/>
+      <register @exit="hideRegisterModal"/>
     </b-modal>
   </b-navbar-nav>
 </template>

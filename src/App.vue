@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Alerts/>
+    <alerts/>
     <div id="navbar-container">
-      <Navbar/>
+      <navbar/>
     </div>
     <div
       id="page"
