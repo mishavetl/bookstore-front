@@ -2,6 +2,8 @@ export default {
   'navbar search': 'Искать книги, авторов',
   'en': 'EN',
   'ru': 'РУС',
+  'shop': 'Магазин',
+  'home': 'Главная',
   'profile': 'Профиль',
   'signout': 'Выйти',
   'login': 'Войти',

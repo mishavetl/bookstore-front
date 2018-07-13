@@ -24,8 +24,8 @@ const router = new Router({
           component: Index,
         },
         {
-          path: 'books',
-          name: 'Books',
+          path: 'shop',
+          name: 'Shop',
           component: Catalogue,
         },
       ],

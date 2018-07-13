@@ -1,5 +1,5 @@
 <template>
-  <b-navbar-nav class="ml-auto">
+  <b-navbar-nav>
     <b-nav-item-dropdown
       :text="$t($i18n.locale())"
       right>
