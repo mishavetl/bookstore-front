@@ -1,8 +1,8 @@
-import Api from './Api'
+import Api from './Api';
 
-class AuthService {
+class BookService {
   static get (store, i18n, params = {}) {
-    return Api(store, i18n, params).get('books')
+    return Api(store, i18n, params).get('books');
   }
 
   // static register (store, i18n, data, params = {}) {
@@ -13,4 +13,4 @@ class AuthService {
   // }
 }
 
-export default AuthService
+export default BookService;

@@ -20,5 +20,5 @@ export default {
   'email is required and must be valid': 'Это обязательное поле, которое должно быть правильным email адресом',
   'field is required and must be 6 characters': 'Это обязательное поле, которое должно быть не менее шести символов длинной',
   'an error occurred': 'Возникла ошибка',
-  'field must be identical to the one above': 'Это поле должно совпадать с полем выше'
-}
+  'field must be identical to the one above': 'Это поле должно совпадать с полем выше',
+};

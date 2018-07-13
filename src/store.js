@@ -1,43 +1,43 @@
-const API_URL = process.env.API_URL
+const API_URL = process.env.API_URL;
 
-let storage = localStorage.getItem('authObject') ? localStorage : sessionStorage
+let storage = localStorage.getItem('authObject') ? localStorage : sessionStorage;
 
-const auth = JSON.parse(storage.getItem('authObject') || '{}')
-const user = JSON.parse(storage.getItem('userObject') || '{}')
+const auth = JSON.parse(storage.getItem('authObject') || '{}');
+const user = JSON.parse(storage.getItem('userObject') || '{}');
 
 export default {
   state: {
     authStorage: storage,
     API_URL: API_URL,
     user,
-    auth
+    auth,
   },
   mutations: {
     authenticate (state, response) {
-      state.user = response.data.data
-      state.authStorage.setItem('userObject', JSON.stringify(state.user))
-      this.commit('updateToken', response.headers)
+      state.user = response.data.data;
+      state.authStorage.setItem('userObject', JSON.stringify(state.user));
+      this.commit('updateToken', response.headers);
     },
     updateToken (state, headers) {
-      state.auth['access-token'] = headers['access-token']
-      state.auth['token-type'] = headers['token-type']
-      state.auth['uid'] = headers['uid']
-      state.auth['client'] = headers['client']
-      state.auth['expiry'] = headers['expiry']
-      state.authStorage.setItem('authObject', JSON.stringify(state.auth))
+      state.auth['access-token'] = headers['access-token'];
+      state.auth['token-type'] = headers['token-type'];
+      state.auth['uid'] = headers['uid'];
+      state.auth['client'] = headers['client'];
+      state.auth['expiry'] = headers['expiry'];
+      state.authStorage.setItem('authObject', JSON.stringify(state.auth));
     },
     deauthenticate (state) {
-      state.user = {}
-      state.token = {}
-      state.auth = {}
-      state.authStorage.removeItem('authObject')
-      state.authStorage.removeItem('userObject')
+      state.user = {};
+      state.token = {};
+      state.auth = {};
+      state.authStorage.removeItem('authObject');
+      state.authStorage.removeItem('userObject');
     },
     rememberAuth (state, flag) {
-      state.authStorage = flag ? localStorage : sessionStorage
+      state.authStorage = flag ? localStorage : sessionStorage;
     },
     setBooks (state, books) {
-      state.books = books
-    }
-  }
-}
+      state.books = books;
+    },
+  },
+};
