@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-const Index = () => import('@/components/Index');
-const Catalogue = () => import('@/components/Catalogue');
+const Index = () => import('@/components/pages/Index');
+const Catalogue = () => import('@/components/pages/Catalogue');
 
 Vue.use(Router);
 

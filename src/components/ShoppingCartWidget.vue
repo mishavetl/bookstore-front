@@ -19,7 +19,7 @@
 </template>
 
 <script>
-  import ShoppingCart from './components/ShoppingCart';
+  import ShoppingCart from './pages/ShoppingCart';
 
   export default {
     name: 'ShoppingCartWidget',

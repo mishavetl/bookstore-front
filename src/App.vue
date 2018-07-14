@@ -4,19 +4,16 @@
     <div id="navbar-container">
       <navbar/>
     </div>
-    <div
-      id="page"
-      class="container"
-    >
+    <b-container id="page">
       <router-view/>
-    </div>
+    </b-container>
   </div>
 </template>
 
 <script>
-  import Alerts from './Alerts';
   import './assets/styles/style.scss';
-  import Navbar from './Navbar';
+  import Alerts from './components/Alerts';
+  import Navbar from './components/Navbar';
 
   export default {
     name: 'App',

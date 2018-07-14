@@ -9,6 +9,8 @@ export default {
   state: {
     authStorage: storage,
     API_URL: API_URL,
+    applicationError: undefined,
+    categories: [],
     user,
     auth,
   },
@@ -36,8 +38,11 @@ export default {
     rememberAuth (state, flag) {
       state.authStorage = flag ? localStorage : sessionStorage;
     },
-    setBooks (state, books) {
-      state.books = books;
+    setCategories (state, categories) {
+      state.categories = categories;
+    },
+    setApplicationError (state, applicationError) {
+      state.applicationError = applicationError;
     },
   },
 };

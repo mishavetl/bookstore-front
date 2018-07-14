@@ -9,6 +9,13 @@
 
       <p>You are now successfully logged in as {{ username }}</p>
     </b-alert>
+    <b-alert
+      :show="applicationError !== undefined"
+      dismissible
+      variant="danger"
+      @dismissed="setApplicationError(undefined)">
+      <p>{{ applicationError }}</p>
+    </b-alert>
   </div>
 </template>
 
@@ -20,10 +27,14 @@
     computed: mapState({
       loginAlertDismissCountDown: 'loginAlertDismissCountDown',
       username: 'username',
+      applicationError: 'applicationError',
     }),
     methods: {
       updateLoginAlertDismissCountDown (loginAlertDismissCountDown) {
         this.$store.commit('updateLoginAlertDismissCountDown', loginAlertDismissCountDown);
+      },
+      setApplicationError (applicationError) {
+        this.$store.commit('setApplicationError', applicationError);
       },
     },
   };
